@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Calculadora Trigonométrica</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+<body>
+  <div class="container">
+    <h1 class="mt-4">Calculadora Trigonométrica</h1>
+    <div class="form-group">
+      <label for="angle">Ángulo:</label>
+      <input type="number" class="form-control" id="angle" placeholder="Ingrese el ángulo">
+    </div>
+    <button class="btn btn-primary" onclick="calculateTrigValues()">Calcular</button>
+    <h2 class="mt-4">Resultados:</h2>
+    <p id="sinResult"></p>
+    <p id="cosResult"></p>
+    <p id="tanResult"></p>
+    <p id="cotResult"></p>
+    <p id="secResult"></p>
+    <p id="cscResult"></p>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <script>
+    function calculateTrigValues() {
+      const angle = document.getElementById('angle').value;
+      
+      const sin = Math.sin(angle * Math.PI / 180);
+      const cos = Math.cos(angle * Math.PI / 180);
+      const tan = Math.tan(angle * Math.PI / 180);
+      const cot = 1 / tan;
+      const sec = 1 / cos;
+      const csc = 1 / sin;
+      
+      document.getElementById('sinResult').textContent = 'Seno: ' + sin.toFixed(4);
+      document.getElementById('cosResult').textContent = 'Coseno: ' + cos.toFixed(4);
+      document.getElementById('tanResult').textContent = 'Tangente: ' + tan.toFixed(4);
+      document.getElementById('cotResult').textContent = 'Cotangente: ' + cot.toFixed(4);
+      document.getElementById('secResult').textContent = 'Secante: ' + sec.toFixed(4);
+      document.getElementById('cscResult').textContent = 'Cosecante: ' + csc.toFixed(4);
+    }
+  </script>
+</body>
+</html>
